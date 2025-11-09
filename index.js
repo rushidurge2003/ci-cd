@@ -8,7 +8,7 @@ app.use(express.json());
 
 //Check server status
 app.get('/', (req, res) => {
-    res.send('Server is running on port ' + (process.env.PORT || 3000));
+    res.send('SERVER IS RUNNING ON PORT ' + (process.env.PORT || 3000));
 });
 
 const PORT = process.env.PORT || 3000;
