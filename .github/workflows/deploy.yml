@@ -33,7 +33,7 @@ jobs:
       #     npm test
 
       # 5️⃣ Deploy to your VPS via SSH
-      - name: Deploy to VPS
+      - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v1.1.0
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -41,6 +41,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /root/cicd-project/frontend
-            git pull origin main
+            echo "🔄 Pulling latest code..."
+            git fetch origin main
+            git reset --hard origin/main
+            echo "📦 Installing dependencies..."
             npm install --production
-            pm2 restart all || pm2 start server.js
+            echo "🚀 Restarting app..."
+            pm2 restart all || pm2 start index.js
