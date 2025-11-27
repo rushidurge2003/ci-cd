@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//Check server status
+//Check server status and return
 app.get('/', (req, res) => {
     return res.send('Hello Omkar! SERVER IS RUNNING ON PORT ' + (process.env.PORT || 3000));
 });
