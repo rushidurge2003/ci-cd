@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
     <body>
         <div class="box">
             <h1>🚀 Server Running Successfully</h1>
-            <p>Hello Omkar!</p>
+            <p>Hello Rushikesh!</p>
             <p>Backend is live on <strong>PORT ${port}</strong></p>
         </div>
     </body>
